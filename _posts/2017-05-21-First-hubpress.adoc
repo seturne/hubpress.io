@@ -10,19 +10,12 @@
 == Getting started
 
 . For the repository
-
 . Configure the correct branch
-
 .. To use a custom domain
-
 ... set the default branch to `gh-pages`
-
 ... switch `gh-pages` branch
-
-... set values in `hubpress/config.json` refer to below  
-
+... set values in `hubpress/config.json` refer to below
 ... Commit changes and Open https://username.github.io/repostoryName/[]
-
 ... Open https://username.github.io/repostoryName/hubpress[] and Use Github info to Login
 
 [source,json]
