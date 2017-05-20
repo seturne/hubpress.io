@@ -11,7 +11,9 @@
 
 . For the repository
 . Configure the correct branch
+[upperalpha]
 .. To use a custom domain
+[upperroman]
 ... set the default branch to `gh-pages`
 ... switch `gh-pages` branch
 ... set values in `hubpress/config.json` refer to below
