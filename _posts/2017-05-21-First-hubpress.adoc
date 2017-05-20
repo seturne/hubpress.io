@@ -35,7 +35,7 @@
     "branch": "gh-pages"
   },
   "theme": {
-    "name": "Casper"
+    "name": "casper"
   }
 }
 ----
