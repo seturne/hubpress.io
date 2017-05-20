@@ -1,0 +1,43 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+= First hubpress
+
+== Getting started
+
+. For the repository
+
+. Configure the correct branch
+
+.. To use a custom domain
+
+... set the default branch to `gh-pages`
+
+... switch `gh-pages` branch
+
+... set values in `hubpress/config.json` refer to below  
+
+... Commit changes and Open https://username.github.io/repostoryName/[]
+
+... Open https://username.github.io/repostoryName/hubpress[] and Use Github info to Login
+
+[source,json]
+.config.json
+----
+{
+  "meta": {
+    "username": "put your username here ex) username",
+    "repositoryName": "put your repository name here ex) hubpress.io",
+    "branch": "gh-pages"
+  },
+  "theme": {
+    "name": "Casper"
+  }
+}
+----
+
+image::https://camo.githubusercontent.com/bd45364c6c64475d1816cef50ddc8395f0f4165b/687474703a2f2f68756270726573732e696f2f696d672f686f6d652d696e7374616c6c2e706e67[completeimg, 300, 318]
