@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 20 May 2017 17:06:16 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 20 May 2017 17:07:59 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[First hubpress]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_getting_started">Getting started</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>For the repository</p>
+</li>
+<li>
+<p>Configure the correct branch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>To use a custom domain</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>set the default branch to <code>gh-pages</code></p>
+</li>
+<li>
+<p>switch <code>gh-pages</code> branch</p>
+</li>
+<li>
+<p>set values in <code>hubpress/config.json</code> refer to below</p>
+</li>
+<li>
+<p>Commit changes and Open <a href="https://username.github.io/repostoryName/" class="bare">https://username.github.io/repostoryName/</a></p>
+</li>
+<li>
+<p>Open <a href="https://username.github.io/repostoryName/hubpress" class="bare">https://username.github.io/repostoryName/hubpress</a> and Use Github info to Login</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">config.json</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "meta": {
+    "username": "put your username here ex) username",
+    "repositoryName": "put your repository name here ex) hubpress.io",
+    "branch": "gh-pages"
+  },
+  "theme": {
+    "name": "Casper"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://camo.githubusercontent.com/bd45364c6c64475d1816cef50ddc8395f0f4165b/687474703a2f2f68756270726573732e696f2f696d672f686f6d652d696e7374616c6c2e706e67" alt="completeimg" width="300" height="318">
+</div>
+</div>
+</div>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/21/First-hubpress.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/21/First-hubpress.html</guid><pubDate>Sun, 21 May 2017 00:00:00 GMT</pubDate></item></channel></rss>
