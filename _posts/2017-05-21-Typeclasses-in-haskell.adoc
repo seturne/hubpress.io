@@ -11,7 +11,7 @@
 . You can think of them kind of as Java interface and unlike classes in OOP
 . What's the type signature of the `==` function?
 +
-[source,shell]
+[source,shell session]
 ----
 ghci> :t (==)
 (==) :: (Eq a) => a -> a -> Bool
@@ -20,7 +20,7 @@ ghci> :t (==)
 . Eq, Ord, Show, Read, Enum, Bounded, Num, Integral, Floating
 . CHCI could infer what kind of result we wanted out of read.
 +
-[source,shell]
+[source,shell session]
 ----
 ghci> read "4"  
 <interactive>:1:0:  
