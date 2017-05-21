@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 May 2017 14:57:40 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 May 2017 14:59:42 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -26,9 +26,12 @@
 &lt;interactive&gt;:1:0:
     Ambiguous type variable `a' in the constraint:
       `Read a' arising from a use of `read' at &lt;interactive&gt;:1:0-7
-    Probable fix: add a type signature that fixes these type variable(s)
-
-ghci&gt; read "5" :: Int
+    Probable fix: add a type signature that fixes these type variable(s)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; read "5" :: Int
 5
 it :: Int
 
