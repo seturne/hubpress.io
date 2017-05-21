@@ -48,7 +48,7 @@ it :: Char
 ----
 . In this case, we can use explicit *Type annotations* by adding `::` refer to above
 . 객체지향언어에 클래스들과 타입클래스는 다르다, 오히려 자바에 인터페이스 정도로 생각됨
-. 타입추론이 항상 잘될꺼라는 가정은 접어두시길
+. 타입추론이 항상 잘 될꺼라는 가정은 접어두시길
 
 ## Reference
 http://learnyouahaskell.com/types-and-typeclasses
