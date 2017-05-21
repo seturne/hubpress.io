@@ -11,8 +11,7 @@
 . You can think of them kind of as Java interface and unlike classes in OOP
 . What's the type signature of the `==` function?
 +
-[source,shell session]
-[source,Haskell]
+[source,shell]
 ----
 ghci> :t (==)
 (==) :: (Eq a) => a -> a -> Bool
