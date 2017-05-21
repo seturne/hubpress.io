@@ -27,7 +27,10 @@ ghci> read "4"
     Ambiguous type variable `a' in the constraint:  
       `Read a' arising from a use of `read' at <interactive>:1:0-7  
     Probable fix: add a type signature that fixes these type variable(s)
-    
+----
++
+[source,sh]
+----
 ghci> read "5" :: Int
 5
 it :: Int
