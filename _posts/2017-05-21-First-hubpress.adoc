@@ -9,7 +9,7 @@
 
 == Getting started
 
-. For the repository
+. Fork the repository
 . Configure the correct branch
 [upperalpha]
 .. To use a custom domain
@@ -17,9 +17,7 @@
 ... set the default branch to `gh-pages`
 ... switch `gh-pages` branch
 ... set values in `hubpress/config.json` refer to below
-... Commit changes and Open https://username.github.io/repostoryName/[]
-... Open https://username.github.io/repostoryName/hubpress[] and Use Github info to Login
-
++
 [source,json]
 .config.json
 ----
@@ -35,4 +33,11 @@
 }
 ----
 
+... Commit changes and Open https://username.github.io/repostoryName/[]
+refer to below
++
 image::https://camo.githubusercontent.com/bd45364c6c64475d1816cef50ddc8395f0f4165b/687474703a2f2f68756270726573732e696f2f696d672f686f6d652d696e7374616c6c2e706e67[completeimg, 300, 318]
+
+... Open https://username.github.io/repostoryName/hubpress[] and Use Github info to Login
+
+
