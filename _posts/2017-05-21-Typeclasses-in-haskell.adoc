@@ -1,0 +1,54 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+
+= Typeclasses in haskell
+
+. You can think of them kind of as Java interface and unlike classes in OOP
+. What's the type signature of the `==` function?
++
+[source,bash]
+----
+ghci> :t (==)
+(==) :: (Eq a) => a -> a -> Bool
+//`=>` class constraint
+----
+. Eq, Ord, Show, Read, Enum, Bounded, Num, Integral, Floating
+. CHCI could infer what kind of result we wanted out of read.
++
+[source,bash]
+----
+ghci> read "4"  
+<interactive>:1:0:  
+    Ambiguous type variable `a' in the constraint:  
+      `Read a' arising from a use of `read' at <interactive>:1:0-7  
+    Probable fix: add a type signature that fixes these type variable(s)
+    
+ghci> read "5" :: Int
+5
+it :: Int
+
+ghci> [1 .. 5]
+[1,2,3,4,5]
+it :: (Enum t, Num t) => [t]
+ghci> succ 'b'
+'c'
+it :: Char
+ghci> pred 'b'
+'a'
+it :: Char
+
+ghci> maxBound :: Char
+'\1114111'
+it :: Char
+----
+. In this case, we can use explicit *Type annotations* by adding `::` refer to above
+. 객체지향언어에 클래스들과 타입클래스는 다르다, 오히려 자바에 인터페이스 정도로 생각됨
+. 타입추론이 항상 잘 될꺼라는 가정은 접어두시길
+
+## Reference
+http://learnyouahaskell.com/types-and-typeclasses
