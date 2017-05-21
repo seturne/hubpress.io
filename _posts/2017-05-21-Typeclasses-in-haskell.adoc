@@ -20,7 +20,7 @@ ghci> :t (==)
 . Eq, Ord, Show, Read, Enum, Bounded, Num, Integral, Floating
 . CHCI could infer what kind of result we wanted out of read.
 +
-[source,Haskell]
+[source,shell]
 ----
 ghci> read "4"  
 <interactive>:1:0:  
