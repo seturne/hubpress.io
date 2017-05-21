@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 May 2017 14:12:33 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 May 2017 14:14:13 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -55,7 +55,7 @@ it :: Char</code></pre>
 <p>객체지향언어에 클래스들과 타입클래스는 다르다, 오히려 자바에 인터페이스 정도로 생각됨</p>
 </li>
 <li>
-<p>타입추론이 항상 잘될꺼라는 가정은 접어두시길</p>
+<p>타입추론이 항상 잘 될꺼라는 가정은 접어두시길</p>
 </li>
 </ol>
 </div>
