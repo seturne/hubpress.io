@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 May 2017 13:55:54 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 May 2017 13:58:01 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Table of Keyword</p>
@@ -83,7 +83,7 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">\W</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not \\w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not \w</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
