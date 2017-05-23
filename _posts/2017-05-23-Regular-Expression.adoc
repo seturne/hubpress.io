@@ -53,35 +53,35 @@
 |or operator
 |a(a\|c)d
 
-|\\s
-|include '', \\t, \\n, \\f, \\r, \\x0b
+|\s
+|include '', \t, \n, \f, \r, \x0b
 |
 
-|\\S
+|\S
 |exclude ''
 |
 
-|\\w
+|\w
 |alphabet or number
 |
 
-|\\W
+|\W
 |not \\w
 |
 
-|\\d
+|\d
 |number
 |
 
-|\\D
-|not \\d
+|\D
+|not \d
 |
 
 |(?i)
 |ignore upper and lower case
 |(?!)abc
 
-|\\
+|\
 |escape expression
 |\|, \*
 |=== 
