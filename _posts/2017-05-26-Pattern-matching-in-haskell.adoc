@@ -46,6 +46,4 @@ ghci> sum' [1 .. 10]
 55
 ----
 +
-IMPORTANT: You cannot use `++` in pattern matches.
-+
-instead of `(xs ++ ys) -> (xs ++ [x])`
+IMPORTANT: You cannot use `++` in pattern matches. instead of `(xs ++ ys) -> (xs ++ [x])`
