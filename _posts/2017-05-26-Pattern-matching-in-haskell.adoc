@@ -47,7 +47,7 @@ ghci> sum' [1 .. 10]
 ----
 
 
-IMPORTANT: You cannot use `&#43;&#43;` in pattern matches. instead of `(xs &#43;&#43; ys) -> (xs &#43;&#43; [x])`
+CAUTION: You cannot use `&#43;&#43;` in pattern matches. instead of `(xs &#43;&#43; ys) -> (xs &#43;&#43; [x])`
 
 
 
