@@ -167,7 +167,24 @@ td, th{ padding: 0; }
     the version number by 1 in the @font-face rule. `?v=1` becomes `?v=2`
     This forces browsers to download the new font file.
 */
-
+/*
+   Adding icon
+*/
+.icon-note:before { 
+   content: '\e800';
+}
+.icon-important:before { 
+   content: '\e801'; 
+}
+.icon-warning:before { 
+   content: '\e802'; 
+}
+.icon-caution:before { 
+   content: '\e803'; 
+}
+.icon-tip:before { 
+   content: '\f0eb'; 
+}
 
 /* ==========================================================================
    2. General - Setting up some base styles
