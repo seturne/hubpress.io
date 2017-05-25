@@ -28,3 +28,31 @@ ghci> charName 'a'
 ghci> charName 'h'
 "*** Exception: Non-exhaustive patterns in function charName
 ----
+* `_` means that we really don't care what that part is
++
+[source, sh]
+----
+ghci> let first :: (a, b, c) -> a
+ghci|     first (x, _, _) = x
+
+ghci> first(1, True, "abc")
+1
+----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
