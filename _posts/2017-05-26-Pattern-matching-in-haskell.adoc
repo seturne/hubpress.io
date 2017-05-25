@@ -45,5 +45,9 @@ ghci|     sum' (x:xs) = x + sum' xs
 ghci> sum' [1 .. 10]
 55
 ----
-+
-IMPORTANT: You cannot use `++` in pattern matches. instead of `(xs ++ ys) -> (xs ++ [x])`
+
+
+IMPORTANT: You cannot use `&#43;&#43;` in pattern matches. instead of `(xs &#43;&#43; ys) -> (xs &#43;&#43; [x])`
+
+
+
