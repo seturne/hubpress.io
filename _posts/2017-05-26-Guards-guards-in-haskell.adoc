@@ -1,0 +1,25 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+= Guards, guards in haskell
+
+* Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below
++
+[source, sh]
+----
+ghci> let bmiTell :: (RealFloat a) => a -> String
+ghci|     bmiTell bmi
+ghci|      |    bmi <= 18.5 = "You're underweight, you emo, you!"
+ghci|      |    bmi <= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
+ghci|      |    bmi <= 30.0 = "You're fat! Lose some weight, fatty!"
+ghci|      |    otherwise = "You're a whale, congratulations!"
+ghci|
+bmiTell :: RealFloat a => a -> String
+----
++
+NOTE: There's no `=` right after the function name and its parameters
+* Guards are indicated by pipes that follow a function's name and its parameters
+
