@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 12:12:54 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 12:55:43 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Table of Keyword</p>
@@ -182,7 +182,40 @@ You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs 
 </td>
 </tr>
 </table>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Guards, guards in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let bmiTell :: (RealFloat a) =&gt; a -&gt; String
+ghci|     bmiTell bmi
+ghci|      |    bmi &lt;= 18.5 = "You're underweight, you emo, you!"
+ghci|      |    bmi &lt;= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
+ghci|      |    bmi &lt;= 30.0 = "You're fat! Lose some weight, fatty!"
+ghci|      |    otherwise = "You're a whale, congratulations!"
+ghci|
+bmiTell :: RealFloat a =&gt; a -&gt; String</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There&#8217;s no <code>=</code> right after the function name and its parameters
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Guards are indicated by pipes that follow a function&#8217;s name and its parameters</p>
+</li>
+</ul>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">

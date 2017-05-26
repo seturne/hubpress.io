@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Guards, guards in haskell</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="https://seturne.github.io/hubpress.io/favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="//seturne.github.io/hubpress.io/themes/casper/assets/css/screen.css?v=1495803343979" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" />
+
+    <link rel="canonical" href="https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html" />
+    <meta name="referrer" content="origin" />
+    
+    <meta property="og:site_name" content="Seturne" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Guards, guards in haskell" />
+    <meta property="og:description" content="Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below ghci&amp;gt; let bmiTell :: (RealFloat a) &#x3D;&amp;gt; a -&amp;gt; String ghci|     bmiTell bmi ghci|      |    bmi &amp;lt;&#x3D; 18.5 &#x3D; &quot;You&#x27;re underweight, you emo, you!&quot; ghci|      |    bmi &amp;lt;&#x3D; 25." />
+    <meta property="og:url" content="https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html" />
+    <meta property="article:published_time" content="2017-05-26T00:00:00.000Z" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Guards, guards in haskell" />
+    <meta name="twitter:description" content="Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below ghci&amp;gt; let bmiTell :: (RealFloat a) &#x3D;&amp;gt; a -&amp;gt; String ghci|     bmiTell bmi ghci|      |    bmi &amp;lt;&#x3D; 18.5 &#x3D; &quot;You&#x27;re underweight, you emo, you!&quot; ghci|      |    bmi &amp;lt;&#x3D; 25." />
+    <meta name="twitter:url" content="https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html" />
+    
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "publisher": "Seturne",
+    "author": {
+        "@type": "Person",
+        "name": "seturne",
+        "image": "https://avatars0.githubusercontent.com/u/6965993?v=3",
+        "url": "https://seturne.github.io/hubpress.io/author/seturne/"
+    },
+    "headline": "Guards, guards in haskell",
+    "url": "https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html",
+    "datePublished": "2017-05-26T00:00:00.000Z",
+    "description": "Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below ghci&amp;gt; let bmiTell :: (RealFloat a) &#x3D;&amp;gt; a -&amp;gt; String ghci|     bmiTell bmi ghci|      |    bmi &amp;lt;&#x3D; 18.5 &#x3D; &quot;You&#x27;re underweight, you emo, you!&quot; ghci|      |    bmi &amp;lt;&#x3D; 25."
+}
+    </script>
+
+    <meta name="generator" content="HubPress" />
+    <link rel="alternate" type="application/rss+xml" title="Seturne" href="https://seturne.github.io/hubpress.io/rss/" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+</head>
+<body class="post-template nav-closed">
+
+    
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Guards, guards in haskell</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-05-26">26 May 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <div class="ulist">
+<ul>
+<li>
+<p>Guards are a way of testing whether some property of a value are ture or false. like if statements refer to below</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let bmiTell :: (RealFloat a) =&gt; a -&gt; String
+ghci|     bmiTell bmi
+ghci|      |    bmi &lt;= 18.5 = "You're underweight, you emo, you!"
+ghci|      |    bmi &lt;= 25.0 = "You're supposedly normal. Pffft, I bet you're ugly!"
+ghci|      |    bmi &lt;= 30.0 = "You're fat! Lose some weight, fatty!"
+ghci|      |    otherwise = "You're a whale, congratulations!"
+ghci|
+bmiTell :: RealFloat a =&gt; a -&gt; String</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There&#8217;s no <code>=</code> right after the function name and its parameters
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Guards are indicated by pipes that follow a function&#8217;s name and its parameters</p>
+</li>
+</ul>
+</div>
+        </section>
+
+        <footer class="post-footer">
+
+
+            <figure class="author-image">
+                <a class="img" href="https://seturne.github.io/hubpress.io/author/seturne/" style="background-image: url(https://avatars0.githubusercontent.com/u/6965993?v&#x3D;3)"><span class="hidden">seturne's Picture</span></a>
+            </figure>
+
+            <section class="author">
+                <h4><a href="https://seturne.github.io/hubpress.io/author/seturne/">seturne</a></h4>
+
+                    <p>Read <a href="https://seturne.github.io/hubpress.io/author/seturne/">more posts</a> by this author.</p>
+                <div class="author-meta">
+                    
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Guards%2C%20guards%20in%20haskell&amp;url=https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=https://seturne.github.io/hubpress.io/2017/05/26/Guards-guards-in-haskell.html"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+        </footer>
+
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="https://seturne.github.io/hubpress.io">Seturne</a> &copy; 2017</section>
+            <section class="poweredby">Proudly published with <a href="http://hubpress.io">HubPress</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js?v="></script> <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js?v="></script> 
+      <script type="text/javascript">
+        jQuery( document ).ready(function() {
+          // change date with ago
+          jQuery('ago.ago').each(function(){
+            var element = jQuery(this).parent();
+            element.html( moment(element.text()).fromNow());
+          });
+        });
+
+        hljs.initHighlightingOnLoad();
+      </script>
+       
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+
+    <script type="text/javascript" src="//seturne.github.io/hubpress.io/themes/casper/assets/js/jquery.fitvids.js?v=1495803343979"></script>
+    <script type="text/javascript" src="//seturne.github.io/hubpress.io/themes/casper/assets/js/index.js?v=1495803343979"></script>
+
+</body>
+</html>
