@@ -1,4 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Thu, 25 May 2017 19:09:25 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 11:51:22 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let lucky :: (Integral a) =&gt; a -&gt; String
+ghci|     lucky 7 = "LUCKY NUMBER SEVEN!"
+ghci|     lucky x = "Sorry, you're out of luck, pal!"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>When making patterns, we should always include a catch all pattern so that out program doesn&#8217;t crash if we get some unjexpected input.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let charName :: char -&gt; String
+ghci|     charName 'a' = "Albert"
+ghci|     charName 'b' = "Broseph"
+
+ghci&gt; charName 'a'
+"Albert"
+ghci&gt; charName 'h'
+"*** Exception: Non-exhaustive patterns in function charName</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>_</code> means that we really don&#8217;t care what that part is</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let first :: (a, b, c) -&gt; a
+ghci|     first (x, _, _) = x
+
+ghci&gt; first(1, True, "abc")
+1
+
+ghci&gt; let sum' :: (Num a) =&gt; [a] -&gt; a
+ghci|     sum' [] = 0
+ghci|     sum' (x:xs) = x + sum' xs
+
+ghci&gt; sum' [1 .. 10]
+55</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs &#43;&#43; ys) &#8594; (xs &#43;&#43; [x])</code>
+</td>
+</tr>
+</table>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
 <ul>
 <li>
 <p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
@@ -255,7 +314,141 @@ it :: Char</code></pre>
 <p><a href="http://learnyouahaskell.com/types-and-typeclasses" class="bare">http://learnyouahaskell.com/types-and-typeclasses</a></p>
 </div>
 </div>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/21/Typeclasses-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/21/Typeclasses-in-haskell.html</guid><pubDate>Sun, 21 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You can think of them kind of as Java interface and unlike classes in OOP</p>
+</li>
+<li>
+<p>What&#8217;s the type signature of the <code>==</code> function?</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; :t (==)
+(==) :: (Eq a) =&gt; a -&gt; a -&gt; Bool
+//`=&gt;` class constraint</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Eq, Ord, Show, Read, Enum, Bounded, Num, Integral, Floating</p>
+</li>
+<li>
+<p>CHCI could infer what kind of result we wanted out of read.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; read "4"
+&lt;interactive&gt;:1:0:
+    Ambiguous type variable `a' in the constraint:
+      `Read a' arising from a use of `read' at &lt;interactive&gt;:1:0-7
+    Probable fix: add a type signature that fixes these type variable(s)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; read "5" :: Int
+5
+it :: Int
+
+ghci&gt; [1 .. 5]
+[1,2,3,4,5]
+it :: (Enum t, Num t) =&gt; [t]
+ghci&gt; succ 'b'
+'c'
+it :: Char
+ghci&gt; pred 'b'
+'a'
+it :: Char
+
+ghci&gt; maxBound :: Char
+'\1114111'
+it :: Char</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>In this case, we can use explicit <strong>Type annotations</strong> by adding <code>::</code> refer to above</p>
+</li>
+<li>
+<p>객체지향언어에 클래스들과 타입클래스는 다르다, 오히려 자바에 인터페이스 정도로 생각됨</p>
+</li>
+<li>
+<p>타입추론이 항상 잘 될꺼라는 가정은 접어두시길</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference">Reference</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="http://learnyouahaskell.com/types-and-typeclasses" class="bare">http://learnyouahaskell.com/types-and-typeclasses</a></p>
+</div>
+</div>
 </div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/21/Typeclasses-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/21/Typeclasses-in-haskell.html</guid><pubDate>Sun, 21 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[First hubpress]]></title><description><![CDATA[<div class="sect1">
+<h2 id="_getting_started">Getting started</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fork the repository</p>
+</li>
+<li>
+<p>Configure the correct branch</p>
+<div class="olist upperalpha">
+<ol class="upperalpha" type="A">
+<li>
+<p>To use a custom domain</p>
+<div class="olist upperroman">
+<ol class="upperroman" type="I">
+<li>
+<p>set the default branch to <code>gh-pages</code></p>
+</li>
+<li>
+<p>switch <code>gh-pages</code> branch</p>
+</li>
+<li>
+<p>set values in <code>hubpress/config.json</code> refer to below</p>
+<div class="listingblock">
+<div class="title">config.json</div>
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "meta": {
+    "username": "put your username here ex) username",
+    "repositoryName": "put your repository name here ex) hubpress.io",
+    "branch": "gh-pages"
+  },
+  "theme": {
+    "name": "casper"
+  }
+}</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Commit changes and Open <a href="https://username.github.io/repostoryName/" class="bare">https://username.github.io/repostoryName/</a>
+refer to below</p>
+<div class="imageblock">
+<div class="content">
+<img src="https://camo.githubusercontent.com/bd45364c6c64475d1816cef50ddc8395f0f4165b/687474703a2f2f68756270726573732e696f2f696d672f686f6d652d696e7374616c6c2e706e67" alt="completeimg" width="300" height="318">
+</div>
+</div>
+</li>
+<li>
+<p>Open <a href="https://username.github.io/repostoryName/hubpress" class="bare">https://username.github.io/repostoryName/hubpress</a> and Use Github info to Login</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/21/First-hubpress.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/21/First-hubpress.html</guid><pubDate>Sun, 21 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[First hubpress]]></title><description><![CDATA[<div class="sect1">
 <h2 id="_getting_started">Getting started</h2>
 <div class="sectionbody">
 <div class="olist arabic">
