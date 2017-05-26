@@ -9,7 +9,7 @@
 
 . Table of Keyword
 +
-[cols="3*^"]
+[cols="^,^,^"]
 |===
 |Key|Desc|Example
 
