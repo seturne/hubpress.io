@@ -1,122 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 11:51:22 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
-<ul>
-<li>
-<p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let lucky :: (Integral a) =&gt; a -&gt; String
-ghci|     lucky 7 = "LUCKY NUMBER SEVEN!"
-ghci|     lucky x = "Sorry, you're out of luck, pal!"</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>When making patterns, we should always include a catch all pattern so that out program doesn&#8217;t crash if we get some unjexpected input.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let charName :: char -&gt; String
-ghci|     charName 'a' = "Albert"
-ghci|     charName 'b' = "Broseph"
-
-ghci&gt; charName 'a'
-"Albert"
-ghci&gt; charName 'h'
-"*** Exception: Non-exhaustive patterns in function charName</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>_</code> means that we really don&#8217;t care what that part is</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let first :: (a, b, c) -&gt; a
-ghci|     first (x, _, _) = x
-
-ghci&gt; first(1, True, "abc")
-1
-
-ghci&gt; let sum' :: (Num a) =&gt; [a] -&gt; a
-ghci|     sum' [] = 0
-ghci|     sum' (x:xs) = x + sum' xs
-
-ghci&gt; sum' [1 .. 10]
-55</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs &#43;&#43; ys) &#8594; (xs &#43;&#43; [x])</code>
-</td>
-</tr>
-</table>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
-<ul>
-<li>
-<p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let lucky :: (Integral a) =&gt; a -&gt; String
-ghci|     lucky 7 = "LUCKY NUMBER SEVEN!"
-ghci|     lucky x = "Sorry, you're out of luck, pal!"</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>When making patterns, we should always include a catch all pattern so that out program doesn&#8217;t crash if we get some unjexpected input.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let charName :: char -&gt; String
-ghci|     charName 'a' = "Albert"
-ghci|     charName 'b' = "Broseph"
-
-ghci&gt; charName 'a'
-"Albert"
-ghci&gt; charName 'h'
-"*** Exception: Non-exhaustive patterns in function charName</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>_</code> means that we really don&#8217;t care what that part is</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let first :: (a, b, c) -&gt; a
-ghci|     first (x, _, _) = x
-
-ghci&gt; first(1, True, "abc")
-1
-
-ghci&gt; let sum' :: (Num a) =&gt; [a] -&gt; a
-ghci|     sum' [] = 0
-ghci|     sum' (x:xs) = x + sum' xs
-
-ghci&gt; sum' [1 .. 10]
-55</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs &#43;&#43; ys) &#8594; (xs &#43;&#43; [x])</code>
-</td>
-</tr>
-</table>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 11:54:39 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Table of Keyword</p>
@@ -241,7 +123,125 @@ You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs 
 </div>
 </li>
 </ol>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/23/Regular-Expression.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/23/Regular-Expression.html</guid><pubDate>Tue, 23 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Regular-Expression.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Regular-Expression.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let lucky :: (Integral a) =&gt; a -&gt; String
+ghci|     lucky 7 = "LUCKY NUMBER SEVEN!"
+ghci|     lucky x = "Sorry, you're out of luck, pal!"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>When making patterns, we should always include a catch all pattern so that out program doesn&#8217;t crash if we get some unjexpected input.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let charName :: char -&gt; String
+ghci|     charName 'a' = "Albert"
+ghci|     charName 'b' = "Broseph"
+
+ghci&gt; charName 'a'
+"Albert"
+ghci&gt; charName 'h'
+"*** Exception: Non-exhaustive patterns in function charName</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>_</code> means that we really don&#8217;t care what that part is</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let first :: (a, b, c) -&gt; a
+ghci|     first (x, _, _) = x
+
+ghci&gt; first(1, True, "abc")
+1
+
+ghci&gt; let sum' :: (Num a) =&gt; [a] -&gt; a
+ghci|     sum' [] = 0
+ghci|     sum' (x:xs) = x + sum' xs
+
+ghci&gt; sum' [1 .. 10]
+55</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs &#43;&#43; ys) &#8594; (xs &#43;&#43; [x])</code>
+</td>
+</tr>
+</table>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Pattern matching in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>You can define separate function bodies for difference patterns, This code is simple and readable</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let lucky :: (Integral a) =&gt; a -&gt; String
+ghci|     lucky 7 = "LUCKY NUMBER SEVEN!"
+ghci|     lucky x = "Sorry, you're out of luck, pal!"</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>When making patterns, we should always include a catch all pattern so that out program doesn&#8217;t crash if we get some unjexpected input.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let charName :: char -&gt; String
+ghci|     charName 'a' = "Albert"
+ghci|     charName 'b' = "Broseph"
+
+ghci&gt; charName 'a'
+"Albert"
+ghci&gt; charName 'h'
+"*** Exception: Non-exhaustive patterns in function charName</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code>_</code> means that we really don&#8217;t care what that part is</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let first :: (a, b, c) -&gt; a
+ghci|     first (x, _, _) = x
+
+ghci&gt; first(1, True, "abc")
+1
+
+ghci&gt; let sum' :: (Num a) =&gt; [a] -&gt; a
+ghci|     sum' [] = 0
+ghci|     sum' (x:xs) = x + sum' xs
+
+ghci&gt; sum' [1 .. 10]
+55</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+You cannot use <code>&#43;&#43;</code> in pattern matches. instead of <code>(xs &#43;&#43; ys) &#8594; (xs &#43;&#43; [x])</code>
+</td>
+</tr>
+</table>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/26/Pattern-matching-in-haskell.html</guid><pubDate>Fri, 26 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Typeclasses in haskell]]></title><description><![CDATA[<div id="preamble">
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
