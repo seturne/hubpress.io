@@ -4,7 +4,7 @@
 +
 [source, sh]
 ----
-ghci> bmiTell :: (RealFloat a) => a -> a -> String  
+ghci>let bmiTell :: (RealFloat a) => a -> a -> String  
 ghci> bmiTell weight height  
     | bmi <= skinny = "You're underweight, you emo, you!"  
     | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
