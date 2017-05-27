@@ -1,0 +1,19 @@
+= Where in haskell
+
+* Using 'where' after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.
++
+[source, sh]
+----
+ghci> bmiTell :: (RealFloat a) => a -> a -> String  
+ghci> bmiTell weight height  
+    | bmi <= skinny = "You're underweight, you emo, you!"  
+    | bmi <= normal = "You're supposedly normal. Pffft, I bet you're ugly!"  
+    | bmi <= fat    = "You're fat! Lose some weight, fatty!"  
+    | otherwise     = "You're a whale, congratulations!"  
+    where bmi = weight / height ^ 2  
+          skinny = 18.5  
+          normal = 25.0  
+          fat = 30.0  
+----
+* The names we define in the where section of a function are only visible to that function, so we don't have to worry about them polluting the namespace of other functions.
+
