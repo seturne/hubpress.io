@@ -1,4 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Fri, 26 May 2017 12:55:43 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 27 May 2017 11:45:01 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Where in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>Using 'where' after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let bmiTell :: (RealFloat a) =&gt; a -&gt; a -&gt; String
+ghci&gt; bmiTell weight height
+    | bmi &lt;= skinny = "You're underweight, you emo, you!"
+    | bmi &lt;= normal = "You're supposedly normal. Pffft, I bet you're ugly!"
+    | bmi &lt;= fat    = "You're fat! Lose some weight, fatty!"
+    | otherwise     = "You're a whale, congratulations!"
+    where bmi = weight / height ^ 2
+          skinny = 18.5
+          normal = 25.0
+          fat = 30.0
+// different way
+where bmi weight / height ^ 2
+      (skinny, normal, fat) = (18.5, 25.0, 30.0)</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Where section of a function are only visible to that function, so we don&#8217;t have to worry about them polluting the namespace of other functions.</p>
+</li>
+<li>
+<p>In where block, we defined constants and functions.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">gchi&gt; let calcBmis :: (RealFloat a) =&gt; [(a, a)] -&gt; [a]
+          calcBmis xs = [bmi w h | (w, h) &lt;- xs]
+              where bmi weight height = weight / height ^ 2</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/27/Where-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/27/Where-in-haskell.html</guid><pubDate>Sat, 27 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Regular Expression]]></title><description><![CDATA[<div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Table of Keyword</p>
