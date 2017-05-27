@@ -1,6 +1,6 @@
 = Where in haskell
 
-* Using 'where' after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.
+* Using `where` after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.
 +
 [source, sh]
 ----
