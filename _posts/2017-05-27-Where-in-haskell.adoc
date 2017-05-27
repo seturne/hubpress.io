@@ -18,8 +18,8 @@ ghci> bmiTell weight height
 where bmi weight / height ^ 2
       (skinny, normal, fat) = (18.5, 25.0, 30.0)
 ----
-* Where section of a function are only visible to that function, so we don't have to worry about them polluting the namespace of other functions.
-* In where block, we defined constants and functions.
+* `where` section of a function are only visible to that function, so we don't have to worry about them polluting the namespace of other functions.
+* In `where` block, we defined constants and functions.
 +
 [source, sh]
 ----
