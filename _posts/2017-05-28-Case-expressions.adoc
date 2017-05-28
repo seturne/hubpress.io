@@ -1,0 +1,36 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+= Case expressions
+
+* `case` expressions are, well, expressions, much like `if else` expressions and `let` bindings.
+* Form is`case expression of pattern -> result ...`
++
+[source, sh]
+----
+ghci> head' :: [a] -> a  h
+ghci| head' xs = case xs of [] -> error "No head for empty lists!"
+                            (x:_) -> x
+----
+* `case` expressions can be used pretty much anywhere.
++
+[source, sh]
+----
+ghci> describeList :: [a] -> String
+ghci| describeList xs = "The list is " ++ 
+ghci|         case xs of [] -> "empty."
+ghci|                    [x] -> "a singleton list."     
+ghci|                     xs -> "a longer list."
+
+//same way
+ghci> describeList :: [a] -> String  
+ghci| describeList xs = "The list is " ++ what xs  
+ghci|    where what [] = "empty."  
+ghci|          what [x] = "a singleton list."  
+ghci|          what xs = "a longer list."
+----
+* They are useful for pattern matching against something in the middle of an expression.
