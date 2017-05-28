@@ -1,4 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sat, 27 May 2017 11:47:50 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Where in haskell]]></title><description><![CDATA[<div class="ulist">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 07:52:14 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Let it be in haskell]]></title><description><![CDATA[<div class="ulist">
+<ul>
+<li>
+<p>Very similar to <code>where</code> are <code>let</code>. And <code>where</code> is at the end of function but <code>let</code> is anywhere</p>
+</li>
+<li>
+<p>The differemce is that <code>let</code> are expressions themselves. <code>where</code> are just syntactic constructs.</p>
+</li>
+<li>
+<p>The form is <code>let &lt;binding&gt; in &lt;expr&gt;</code>.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; cylinder :: (RealFloat a) =&gt; a -&gt; a -&gt; a
+ghci| cylinder r h =
+ghci|      let sideArea = 2 * pi * r * h
+ghci|          topArea = pi * r ^2
+ghci|          in sideArea + 2 * topArea
+
+ghci&gt; [let square x = x * x in (square 5, square 3, square 2)]
+[(25,9,4)]
+
+ghci&gt; calcBmis :: (RealFloat a) =&gt; [(a, a)] -&gt; [a]
+ghci| calcBmis xs = [bmi | (w, h) &lt;- xs, let bmi = w / h ^ 2, bmi &gt;= 25.0]</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>To use it inside list comprehensions is not a filter</p>
+</li>
+<li>
+<p>Names defined are visible to the part before the <code>|</code></p>
+</li>
+<li>
+<p>The in part can also be omitted when defining functions and constants directly in GHCi. If we do that, then the names will be visible throughout the entire interactive session.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; let zoot x y z = x * y + z
+ghci&gt; zoot 3 9 2
+29
+
+ghci&gt; let boot x y z = x * y + z in boot 3 4 2
+14
+
+ghci&gt; boot
+&lt;interactive&gt;:1:0: Not in scope: `boot'</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</guid><pubDate>Sun, 28 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Where in haskell]]></title><description><![CDATA[<div class="ulist">
 <ul>
 <li>
 <p>Using <code>where</code> after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.</p>
