@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 12:11:43 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Let it be in haskell]]></title><description><![CDATA[<div class="ulist">
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Seturne]]></title><description><![CDATA[Blog for something]]></description><link>https://seturne.github.io/hubpress.io</link><generator>RSS for Node</generator><lastBuildDate>Sun, 28 May 2017 13:59:32 GMT</lastBuildDate><atom:link href="https://seturne.github.io/hubpress.io/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title><![CDATA[Let it be in haskell]]></title><description><![CDATA[<div class="ulist">
 <ul>
 <li>
 <p>Very similar to <code>where</code> are <code>let</code>. And <code>where</code> is at the end of function but <code>let</code> is anywhere</p>
@@ -47,45 +47,7 @@ ghci&gt; boot
 </div>
 </li>
 </ul>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</guid><pubDate>Sun, 28 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Case expressions]]></title><description><![CDATA[<div class="ulist">
-<ul>
-<li>
-<p><code>case</code> expressions are, well, expressions, much like <code>if else</code> expressions and <code>let</code> bindings.</p>
-</li>
-<li>
-<p>Form is`case expression of pattern &#8594; result &#8230;&#8203;`</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; head' :: [a] -&gt; a  h
-ghci| head' xs = case xs of [] -&gt; error "No head for empty lists!"
-                            (x:_) -&gt; x</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p><code>case</code> expressions can be used pretty much anywhere.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-sh" data-lang="sh">ghci&gt; describeList :: [a] -&gt; String
-ghci| describeList xs = "The list is " ++
-ghci|         case xs of [] -&gt; "empty."
-ghci|                    [x] -&gt; "a singleton list."
-ghci|                     xs -&gt; "a longer list."
-
-//same way
-ghci&gt; describeList :: [a] -&gt; String
-ghci| describeList xs = "The list is " ++ what xs
-ghci|    where what [] = "empty."
-ghci|          what [x] = "a singleton list."
-ghci|          what xs = "a longer list."</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>They are useful for pattern matching against something in the middle of an expression.</p>
-</li>
-</ul>
-</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/28/Case-expressions.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/28/Case-expressions.html</guid><pubDate>Sun, 28 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Where in haskell]]></title><description><![CDATA[<div class="ulist">
+</div>]]></description><link>https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</link><guid isPermaLink="true">https://seturne.github.io/hubpress.io/2017/05/28/Let-it-be-in-haskell.html</guid><pubDate>Sun, 28 May 2017 00:00:00 GMT</pubDate></item><item><title><![CDATA[Where in haskell]]></title><description><![CDATA[<div class="ulist">
 <ul>
 <li>
 <p>Using <code>where</code> after the guards and then we define several names or functions. These names are visible across the guards and give us the advantage of not having to repeat ourselves.</p>
