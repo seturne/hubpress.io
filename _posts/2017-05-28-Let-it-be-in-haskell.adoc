@@ -1,0 +1,43 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+= Let it be in haskell
+
+* Very similar to `where` are `let`. And `where` is at the end of function but `let` is anywhere
+* The differemce is that `let` are expressions themselves. `where` are just syntactic constructs. 
+* The form is `let <binding> in <expr>`. 
++ 
+[source, sh] 
+---- 
+ghci> cylinder :: (RealFloat a) => a -> a -> a 
+ghci| cylinder r h = 
+ghci|      let sideArea = 2 * pi * r * h 
+ghci|          topArea = pi * r ^2 
+ghci|          in sideArea + 2 * topArea 
+
+ghci> [let square x = x * x in (square 5, square 3, square 2)] 
+[(25,9,4)] 
+
+ghci> calcBmis :: (RealFloat a) => [(a, a)] -> [a] 
+ghci| calcBmis xs = [bmi | (w, h) <- xs, let bmi = w / h ^ 2, bmi >= 25.0] 
+---- 
+* To use it inside list comprehensions is not a filter 
+* Names defined are visible to the part before the `|` 
+* The in part can also be omitted when defining functions and constants directly in GHCi. If we do that, then the names will be visible throughout the entire interactive session. 
++ 
+[source, sh] 
+---- 
+ghci> let zoot x y z = x * y + z 
+ghci> zoot 3 9 2 
+29
+
+ghci> let boot x y z = x * y + z in boot 3 4 2 
+14
+
+ghci> boot 
+<interactive>:1:0: Not in scope: `boot' 
+----
