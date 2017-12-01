@@ -14,8 +14,7 @@ def fib(n: Int): Int
 . Implement *isSorted*, whick checks whether an Array[A] is sorted accoding to a given comparison function
 [source, scala]
 def isSorted[A](as: Array[A], gt: (A,A) => Boolean): Boolean
-
-
-
-
-
+. Implement *partial1* and wirte down concrete usage of it. There is only one possible implementation that compiles. We don't have any concrete types here, so we can only stick things together using the local 'rules of the universe' established by the type signature. The style of reasoning required here is very common in functional programming - we are simply manipulating symbols in a very abstract way, similar to how we would reason when solving an algebric equation.
+[source, scala]
+def partial1[A, B, C](a: A, f: (A,B) => C): B => C
+. Let's look at another example,  currying, which converts a function of *_N_* arguments into a function of one argument that returns another function as its result. Here again, there is only one implementation that typechecks.
