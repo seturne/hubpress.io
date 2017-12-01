@@ -9,8 +9,13 @@
 
 == Exercise
 . Write a function to get the nth Fibonacci number. The first two Fibonacci numbers are 0 and 1, and the next number is always the sum of the previous two. Your definition should use a local tail-recursive function.
-+
 [source, scala]
-`def fib(n: Int): Int`
+def fib(n: Int): Int
+. Implement *isSorted*, whick checks whether an Array[A] is sorted accoding to a given comparison function
+[source, scala]
+def isSorted[A](as: Array[A], gt: (A,A) => Boolean): Boolean
+
+
+
 
 
