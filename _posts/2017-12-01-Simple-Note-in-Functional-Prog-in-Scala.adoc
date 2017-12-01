@@ -18,3 +18,21 @@ def isSorted[A](as: Array[A], gt: (A,A) => Boolean): Boolean
 [source, scala]
 def partial1[A, B, C](a: A, f: (A,B) => C): B => C
 . Let's look at another example,  currying, which converts a function of *_N_* arguments into a function of one argument that returns another function as its result. Here again, there is only one implementation that typechecks.
+[source, scala]
+def curry[A, B, C](f: (A, B) => C): A => (B => C)
+. Implement *uncurry*, which reverses the transformation of *curry*. Note that since *=>* associates to the right, *A => (B => C)* can be written as *A => B => C*.
+[source, scala]
+def uncurry[A, B, C](f: A => B => C): (A, B) => C
+
+
+
+
+
+
+
+
+
+
+
+
+
