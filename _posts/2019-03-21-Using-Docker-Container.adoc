@@ -1,0 +1,34 @@
+// = Your Blog title
+// See https://hubpress.gitbooks.io/hubpress-knowledgebase/content/ for information about the parameters.
+// :hp-image: /covers/cover.png
+// :published_at: 2019-01-31
+// :hp-tags: HubPress, Blog, Open_Source,
+// :hp-alt-title: My English Title
+
+= Using Docker Container ?
+
+* use mongo db in docker container
+* use node in another in other docker container
+* use docker network
+
+== Check
+
+* installed docker, container images
+* Use docker network necessary setting docker container by using name optinon if you don't then use container_id
+* Others using host(host network card) and ip_address..Maybe
+
+== Command
+
+[source, sh]
+----------------
+//docker network create
+> docker network create lnet
+> docker network ls
+> docker network inspect "Id of lnet"
+
+//docker container run mongo
+> docker run --name mongo --net=lnet -d "dockerimagename"
+
+//other docker container run
+> docker run -it --net=lnet --rm "otherdockerimagename" /bin/bash
+----------------
