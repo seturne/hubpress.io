@@ -31,4 +31,5 @@
 
 //other docker container run
 > docker run -it --net=lnet --rm "otherdockerimagename" /bin/bash
+https://docs.google.com/spreadsheets/d/11oe4XWHHQjZlMISXRgL8DHC0RpKbb76aRTrhDVmUfWg/edit?usp=sharing
 ----------------
